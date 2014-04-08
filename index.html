@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no" />
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <link href="style_map.css" rel="stylesheet">
+
+  </head>
+  <body onload="sizeChange()">
+	<div id="heading"/>
+	 <h2> Bukedea Area Poverty and Household Density </h2>
+	 <p>This map shows the average qualitative poverty measure and the household density for 2002 parish boundaries in Uganda. Areas are color coded by quintile. For more information, please visit <a href="http://ugandadata.org/redbin/RpWebEngine.exe/Portal?&BASE=cen2002" target="_blank">the Uganda Bureau of Statistics website</a>.
+	<div>
+		<table id="map-container">
+			<tr>
+				<td>
+						<div id="map-canvas"/>
+				</td>
+				<td colspan="2" class="controls">
+					<table>
+						<tr>
+							<td>
+							<select id="dropdown" onchange="changeLayer()">
+							  <option value="poverty" selected="selected">Average Poverty</option>
+							  <option value="population">Household Density</option>
+							  <option value="none">Base Map Only</option>
+							</select>
+							</td>
+						</tr>
+						<tr>
+							<td id="legend-container">
+							</td>
+						</tr>
+				</table>
+				</td>
+			</tr>
+		</table>
+	</div>
+	    <script src="http://d3js.org/d3.v3.min.js"></script>
+     	 <script src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js'></script>
+	<script type="text/javascript"
+  	src="http://maps.googleapis.com/maps/api/js?libraries=visualization&key=YOURAPIKEYHERE&sensor=false">
+	</script>
+
+  <script type="text/javascript" src="create_map.js"></script>
+  </body>
+</html>
